@@ -1,0 +1,26 @@
+.ResultsList > h2 {
+  padding: 6px 16px 8px;
+}
+
+.ResultsList > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  .ResultsList > ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 16px;
+  }
+
+  li.Result {
+    margin: 0 0 8px;
+    padding: 12px;
+    border-width: 1px;
+    box-sizing: border-box;
+    width: 459px;
+  }
+}

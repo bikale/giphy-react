@@ -1,0 +1,19 @@
+.Result {
+  display: flex;
+  flex-direction: column;
+  background-color: #16191d;
+  margin: 0 0 8px;
+  border: 0 solid #303437;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  padding: 8px 16px;
+}
+
+.Result > h3 {
+  margin: 4px 0 8px;
+}
+
+.Result .link {
+  text-align: right;
+  padding: 4px 0;
+}

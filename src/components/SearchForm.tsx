@@ -1,11 +1,15 @@
 import { FormEvent, useState } from "react";
 import "./SearchForm.css";
 
-const SearchForm = () => {
+interface Props {
+  onSearch: (query: string) => void;
+}
+const SearchForm = ({ onSearch }: Props) => {
   const [term, setTerm] = useState("");
 
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
+    onSearch(term);
   };
 
   return (

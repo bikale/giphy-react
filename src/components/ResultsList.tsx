@@ -1,10 +1,20 @@
+import { GIF } from "../models/Gif";
+import Result from "./Result";
 import "./ResultsList.css";
 
-const ResultsList = () => {
+interface Props {
+  gifs: GIF[];
+}
+
+const ResultsList = ({ gifs }: Props) => {
   return (
     <div className="ResultsList">
       <h2>Results</h2>
-      <ul></ul>
+      <ul>
+        {gifs.map((gif) => (
+          <Result key={gif.id} gif={gif} />
+        ))}
+      </ul>
     </div>
   );
 };

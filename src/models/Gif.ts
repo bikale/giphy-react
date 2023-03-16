@@ -15,3 +15,7 @@ interface Images {
 export interface GiphyApiResponse {
   data: GIF[];
 }
+
+export interface GIFApiResponse {
+  data: GIF;
+}

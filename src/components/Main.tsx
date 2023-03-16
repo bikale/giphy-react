@@ -5,14 +5,18 @@ import "./Main.css";
 import { useEffect, useState } from "react";
 import { getTrendingGifs } from "../services/giphyApiServices";
 import { GIF } from "../models/Gif";
+import { useSearchParams } from "react-router-dom";
 
 const Main = () => {
   const [gifs, setGifs] = useState<GIF[]>([]);
-  const [searchTerm, setSearchTerm] = useState("pizza");
+  const [searchParams] = useSearchParams();
+  const term: string | null = searchParams.get("term");
 
+  const [searchTerm, setSearchTerm] = useState(term ? term : "");
   useEffect(() => {
-    getTrendingGifs(searchTerm).then((res) => setGifs(res.data));
-  }, [searchTerm]);
+    console.log(term);
+    getTrendingGifs(term ? term : "happy").then((res) => setGifs(res.data));
+  }, [term]);
 
   return (
     <div className="Main">

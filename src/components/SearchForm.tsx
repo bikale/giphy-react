@@ -1,15 +1,19 @@
 import { FormEvent, useState } from "react";
 import "./SearchForm.css";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   onSearch: (query: string) => void;
 }
 const SearchForm = ({ onSearch }: Props) => {
   const [term, setTerm] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e: FormEvent): void => {
     e.preventDefault();
-    onSearch(term);
+    // onSearch(term);
+    // const queryParam = ;
+    navigate(`/search?${new URLSearchParams({ term })}`);
   };
 
   return (
